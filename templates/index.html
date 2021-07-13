@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Disambiguation</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="sidebar.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+<body>
+
+<button type="submit" class="btn btn-warning btn-group-lg" onclick="javascript:eraseText();">Șterge</button>
+
+
+<div id="accordion">
+	<div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+          Conllu convertor
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTow" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-header">
+        <form method="POST" action="/" class="mt-4">	
+					<button type="submit" class="btn btn-warning btn-group-lg" name="func" value="2">Trimite</button>
+					<div class = "container">
+						<div class = "row justify-content-center">
+							<div class = "col-12">
+								<textarea class="form-control my-4" id="textarea" rows="10" placeholder="Introdu o propoziție formatată în conllu aici" name="conllu" style="resize: none;">{{conllu}}</textarea>
+							</div>			
+						</div>
+					</div>		
+				</form>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          SpaCy convertor
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">    
+      <div class="card-body">
+        <form method="POST" action="/" class="mt-4">	
+					<button type="submit" class="btn btn-warning btn-group-lg" name="func" value="1">Trimite</button>
+					<div class = "container">
+						<div class = "row justify-content-center">
+							<div class = "col-12">
+								<textarea class="form-control my-4" id="textarea" rows="10" placeholder="Introdu o propoziție formatată în conllu aici" name="conllu" style="resize: none;">{{conllu}}</textarea>
+							</div>			
+						</div>
+					</div>		
+				</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "container">
+	<div class = "row justify-content-center">
+		<div class = "col-11">
+			{{svg | safe}}
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+function eraseText() {
+  document.getElementById("textarea").value = "";
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var scrollpos = localStorage.getItem('scrollpos');
+  if (scrollpos) window.scrollTo(0, scrollpos);
+});
+
+window.onbeforeunload = function(e) {
+  localStorage.setItem('scrollpos', window.scrollY);
+};
+</script>
+
+</body>
+</html>
