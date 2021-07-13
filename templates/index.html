@@ -47,7 +47,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           SpaCy convertor
         </button>
       </h5>
@@ -83,15 +83,6 @@
 function eraseText() {
   document.getElementById("textarea").value = "";
 }
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-  var scrollpos = localStorage.getItem('scrollpos');
-  if (scrollpos) window.scrollTo(0, scrollpos);
-});
-
-window.onbeforeunload = function(e) {
-  localStorage.setItem('scrollpos', window.scrollY);
-};
 </script>
 
 </body>

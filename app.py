@@ -1,8 +1,8 @@
 import io
-# import spacy
+import spacy
 import csv
 from flask import Flask, render_template, request
-# from spacy import displacy
+from spacy import displacy
 from graphviz import Digraph
 from conllu import parse_incr
 from conllu import parse
@@ -73,12 +73,12 @@ def propDisplayGraph(connlu):
 	return svg
 
 
-# def propDisplaySpacy(conllu):
-# 	nlp = spacy.load("ro_core_news_lg")
-# 	doc1 = nlp(conllu)
-# 	options = {"compact": True, "bg": "white","color": "black", "font": "Source Sans Pro"}
-# 	svg = displacy.render(doc1, style="dep", page=False, options=options)
-# 	return svg
+def propDisplaySpacy(conllu):
+	nlp = spacy.load("ro_core_news_lg")
+	doc1 = nlp(conllu)
+	options = {"compact": True, "bg": "white","color": "black", "font": "Source Sans Pro"}
+	svg = displacy.render(doc1, style="dep", page=False, options=options)
+	return svg
 
 if __name__ == "__main__":
 	app.run(debug=True)
