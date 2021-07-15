@@ -1,7 +1,7 @@
 import io
 import csv
-import spacy
-from spacy import displacy
+# import spacy
+# from spacy import displacy
 from flask import Flask, render_template, request
 from graphviz import Digraph
 from conllu import parse_incr
@@ -33,11 +33,8 @@ def graphConvertor():
 def spaCyConvertor():
 	if request.method == 'POST':		
 		prop = request.form['prop']
-		if prop == None:
-			return "Incorrect format"
-		else:
-			svg = propDisplaySpacy(prop)
-			return render_template('SpacyConvertor.html', prop = prop, svg = svg)
+		svg = propDisplaySpacy(prop)
+		return render_template('SpacyConvertor.html', prop = prop, svg = svg)
 
 	return render_template('SpacyConvertor.html')
 
@@ -89,15 +86,15 @@ def propDisplayGraph(connlu):
 		return "Incorrect format"
 
 
-def propDisplaySpacy(prop):
-	if prop != None:
-		nlp = spacy.load("ro_core_news_lg")
-		doc1 = nlp(prop)
-		options = {"compact": True, "bg": "white","color": "black", "font": "Source Sans Pro"}
-		svg = displacy.render(doc1, style="dep", page=False, options=options)
-		return svg
-	else:
-		return "Incorrect format"
+# def propDisplaySpacy(prop):
+# 	if prop != None:
+# 		nlp = spacy.load("ro_core_news_sm")
+# 		doc1 = nlp(prop)
+# 		options = {"compact": True, "bg": "white","color": "black", "font": "Source Sans Pro"}
+# 		svg = displacy.render(doc1, style="dep", page=False, options=options)
+# 		return svg
+# 	else:
+# 		return "Incorrect format"
 
 if __name__ == "__main__":
 	app.run(debug=True)
