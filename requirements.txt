@@ -151,7 +151,7 @@ requests-oauthlib==1.3.0
 Reverso-API==0.0.1b3
 reverso-context-api==0.5
 rfc3986==1.5.0
-ro-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ro_core_news_lg-3.0.0/ro_core_news_lg-3.0.0-py3-none-any.whl
+ro-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ro_core_news_sm-3.0.0/ro_core_news_sm-3.0.0-py3-none-any.whl
 rouge==1.0.0
 rowordnet==1.1.0
 rsa==4.7.2
