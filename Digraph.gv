@@ -1,34 +1,34 @@
 // The Round Table
 digraph {
+	graph [rankdir=LR]
+	foarte -> bun
+	bun -> Unul
+	cu -> vapor
+	un -> vapor
+	vapor -> Unul
+	plin -> vapor
+	de -> "refugiați"
+	"refugiați" -> plin
+	bombardat -> plin
+	undeva -> bombardat
+	"în" -> Mediterana
+	Mediterana -> bombardat
 	// The Round Table
 	{
-		rank=same
-		Textul -> de
-		de -> dedesubt
-		dedesubt -> suna
-		suna -> ""
-		"" -> FRATELE
-		FRATELE -> CEL
-		CEL -> MARE
-		MARE -> ESTE
-		ESTE -> CU
-		CU -> OCHII
-		OCHII -> PE
-		PE -> TINE
-		TINE -> "."
-		Textul -> suna
-		de -> dedesubt
-		dedesubt -> Textul
-		suna -> "."
-		"" -> suna
-		FRATELE -> ESTE
-		CEL -> MARE
-		MARE -> FRATELE
-		ESTE -> suna
-		CU -> ESTE
-		OCHII -> ESTE
-		PE -> TINE
-		TINE -> ESTE
-		"." -> suna
+		edge [style=invis]
+		Unul -> foarte
+		foarte -> bun
+		bun -> cu
+		cu -> un
+		un -> vapor
+		vapor -> plin
+		plin -> de
+		de -> "refugiați"
+		"refugiați" -> ","
+		"," -> bombardat
+		bombardat -> undeva
+		undeva -> "în"
+		"în" -> Mediterana
+		Mediterana -> "."
 	}
 }

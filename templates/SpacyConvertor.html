@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <form method="POST" action="/SpacyConvertor.html" class="mt-4">		
+			<div class = "container">
+				<div class = "row justify-content-center">
+					<div class = "col-12">
+						<textarea class="form-control my-4" id="textarea" rows="6" placeholder="Introdu o propoziție." name="prop" style="resize: none;">{{prop}}</textarea>
+					</div>
+					<button type="submit" class="btn btn-warning btn-group-lg">Trimite</button>			
+				</div>
+			</div>				
+		</form>
+    </div>
+  </div>
+</div>
+
+<div class = "justify-content-cente mx-4 my-4">
+		{{svg | safe}}
+</div>
+
+{% endblock %}
