@@ -175,10 +175,6 @@ srsly==2.4.1
 st-annotated-text==1.1.0
 streamlit==0.80.0
 tenacity==7.0.0
-tensorboard==2.4.1
-tensorboard-plugin-wit==1.8.0
-tensorflow==2.5.0rc1
-tensorflow-estimator==2.5.0rc0
 termcolor==1.1.0
 terminado==0.9.4
 testpath==0.4.4
@@ -190,7 +186,6 @@ tokenizers==0.10.2
 toml==0.10.2
 tomlkit==0.7.0
 toolz==0.11.1
-torch==1.8.1
 tornado==6.1
 tqdm==4.60.0
 traitlets==5.0.5
